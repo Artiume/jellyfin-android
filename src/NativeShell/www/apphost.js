@@ -54,7 +54,7 @@ function getDeviceProfile(profileBuilder, item) {
             }
         ]
     });
-
+    
     profile.CodecProfiles.push({
         Type: 'Video',
         Codec: 'h264',
@@ -68,6 +68,13 @@ function getDeviceProfile(profileBuilder, item) {
             Condition: 'LessThanEqual',
             Property: 'VideoLevel',
             Value: '41'
+        },
+ // https://forum.videohelp.com/threads/360190-Is-avc1-the-same-for-H-264-MPEG-4-AVC
+ // Android client currently doesn't support avc1. 
+        {
+            Condition: 'NotEqual',
+            Property: 'CodecTag',
+            Value: 'avc1'
         }]
     });
 
