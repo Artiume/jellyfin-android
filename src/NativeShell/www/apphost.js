@@ -55,6 +55,7 @@ function getDeviceProfile(profileBuilder, item) {
         ]
     });
     
+    // https://superuser.com/questions/489087/what-are-the-differences-between-h-264-profiles
     // https://developer.android.com/guide/topics/media/media-formats
     // With the issues of transcoding, high may need to be removed.
     profile.CodecProfiles.push({
