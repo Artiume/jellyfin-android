@@ -65,7 +65,7 @@ function getDeviceProfile(profileBuilder, item) {
         {
             Condition: 'EqualsAny',
             Property: 'VideoProfile',
-            Value: 'high|main|baseline|constrained baseline'
+            Value: 'main|baseline|constrained baseline' // high|
         },
         {
             Condition: 'LessThanEqual',
