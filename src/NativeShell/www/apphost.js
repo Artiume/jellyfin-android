@@ -55,6 +55,8 @@ function getDeviceProfile(profileBuilder, item) {
         ]
     });
     
+    // https://developer.android.com/guide/topics/media/media-formats
+    // With the issues of transcoding, high may need to be removed.
     profile.CodecProfiles.push({
         Type: 'Video',
         Codec: 'h264',
