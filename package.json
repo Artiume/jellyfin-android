@@ -24,7 +24,7 @@
     "gulp-uglify": "^3.0.2",
     "jellyfin-web": "git+https://github.com/jellyfin/jellyfin-web.git#master",
     "org.jellyfin.mobile": "file:src/NativeShell",
-    "request": "^2.88.0",
+    "request": "^2.88.2",
     "uglify-es": "^3.3.9"
   },
   "cordova": {
