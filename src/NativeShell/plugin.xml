@@ -19,12 +19,14 @@
   <platform name="android">
     <config-file target="res/xml/config.xml" parent="/*">
       <feature name="NativeShell">
-        <param name="android-package" value="org.jellyfin.mobile.NativeShell"/>
+        <param name="android-package" value="org.jellyfin.mobile.NativeShell" />
       </feature>
     </config-file>
     <config-file target="AndroidManifest.xml" parent="/manifest">
-      <uses-permission android:name="android.permission.WAKE_LOCK"/>
-      <uses-permission android:name="android.permission.BLUETOOTH"/>
+      <uses-permission android:name="android.permission.WAKE_LOCK" />
+      <uses-permission android:name="android.permission.BLUETOOTH" />
+      <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+      <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     </config-file>
     <config-file target="AndroidManifest.xml" parent="/manifest/application">
       <service android:name="org.jellyfin.mobile.RemotePlayerService" />
@@ -50,7 +52,11 @@
     <resource-file src="res/drawable-xxhdpi/ic_notification.png" target="res/drawable-xxhdpi/ic_notification.png" />
     <resource-file src="res/drawable-xxxhdpi/ic_notification.png" target="res/drawable-xxxhdpi/ic_notification.png" />
     <resource-file src="res/values/colors.xml" target="res/values/colors.xml" />
-    <resource-file src="res/values/strings_pref.xml" target="res/values/strings_pref.xml" />
-    <resource-file src="res/layout/exo_player.xml" target="res/layout/exo_player.xml" />
+    <resource-file src="res/values/preferences.xml" target="res/values/preferences.xml" />
+    <resource-file src="res/values/translate.xml" target="res/values/translate.xml" />
+    <resource-file src="res/values-de/translate.xml" target="res/values-de/translate.xml" />
+    <resource-file src="res/values-fr/translate.xml" target="res/values-fr/translate.xml" />
+    <resource-file src="res/values-pt-rBR/translate.xml" target="res/values-pt-rBR/translate.xml" />
+    <resource-file src="res/layout/exoplayer.xml" target="res/layout/exoplayer.xml" />
   </platform>
 </plugin>

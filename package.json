@@ -1,38 +1,39 @@
 {
   "name": "jellyfin-android",
-  "version": "0.9.0",
-  "description": "A Cordova-based mobile app for Jellyfin",
+  "version": "1.0.0",
+  "description": "A Cordova app for Jellyfin",
   "repository": {
     "type": "git",
     "url": "https://github.com/jellyfin/jellyfin-android.git"
   },
   "scripts": {
-    "postinstall": "gulp"
+    "prepare": "gulp"
   },
   "license": "GPL-2.0-only",
   "dependencies": {
-    "acorn": "^6.1.1",
+    "acorn": "^6.4.1",
     "cordova": "^9.0.0",
-    "cordova-android": "^8.0.0",
-    "cordova-plugin-androidx": "^1.0.1",
+    "cordova-android": "^8.1.0",
+    "cordova-plugin-androidx": "^1.0.2",
     "cordova-plugin-chromecast": "git+https://github.com/jellyfin/cordova-plugin-chromecast.git#v0.1.1",
+    "cordova-plugin-screen-orientation": "^3.0.2",
     "cordova-plugin-whitelist": "^1.3.3",
     "del": "^3.0.0",
+    "es6-promise-plugin": "^4.2.2",
     "gulp": "^4.0.0",
     "gulp-dom": "^1.0.0",
     "gulp-if": "^2.0.2",
-    "gulp-uglify": "^3.0.2",
-    "jellyfin-web": "git+https://github.com/jellyfin/jellyfin-web.git#master",
+    "jellyfin-web": "git+https://github.com/jellyfin/jellyfin-web.git#v10.5.4",
     "org.jellyfin.mobile": "file:src/NativeShell",
-    "request": "^2.88.0",
-    "uglify-es": "^3.3.9"
+    "request": "^2.88.0"
   },
   "cordova": {
     "plugins": {
       "cordova-plugin-whitelist": {},
       "cordova-plugin-chromecast": {},
-      "org.jellyfin.mobile": {},
-      "cordova-plugin-androidx": {}
+      "cordova-plugin-androidx": {},
+      "cordova-plugin-screen-orientation": {},
+      "org.jellyfin.mobile": {}
     },
     "platforms": [
       "android"

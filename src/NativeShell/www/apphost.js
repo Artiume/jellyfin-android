@@ -4,7 +4,7 @@ var appName;
 var appVersion;
 
 var features = [
-    //'filedownload',
+    'filedownload',
     'displaylanguage',
     'externalplayerintent',
     'subtitleappearancesettings',
@@ -20,12 +20,8 @@ var features = [
 ];
 
 function getDeviceProfile(profileBuilder, item) {
-    var profile = profileBuilder();
-
-    profile.DirectPlayProfiles.push({
-        Container: "m4v,3gp,ts,mpegts,mov,xvid,vob,mkv,wmv,asf,ogm,ogv,m2v,avi,mpg,mpeg,mp4,webm,wtv",
-        Type: 'Video',
-        AudioCodec: 'aac,aac_latm,mp2,mp3,wma,dca,pcm,PCM_S16LE,PCM_S24LE,opus,flac'
+    var profile = profileBuilder({
+        enableMkvProgressive: false
     });
 
     profile.CodecProfiles = profile.CodecProfiles.filter(function (i) {
@@ -93,11 +89,11 @@ function getDeviceProfile(profileBuilder, item) {
 };
 
 function getDeviceProfileForVideo(item) {
-    let container = item.Container;
-    let videoTracks = audioTracks = subtitleTracks = [];
+    var container = item.Container;
+    var videoTracks = audioTracks = subtitleTracks = [];
 
-    for (let i = 0; i < item.MediaStreams.lengh; i++) {
-        let track = item.MediaStreams[i];
+    for (var i = 0; i < item.MediaStreams.lengh; i++) {
+        var track = item.MediaStreams[i];
 
         switch (track.Type) {
             case 'Video':
@@ -114,7 +110,7 @@ function getDeviceProfileForVideo(item) {
         }
     }
 
-    let supportedTracks = window.ExoPlayer.checkTracksSupport(container, videoTracks, audioTracks, subtitleTracks);
+    var supportedTracks = window.ExoPlayer.checkTracksSupport(container, videoTracks, audioTracks, subtitleTracks);
     // TODO: check if the given tracks are supported. If not, they are not added up to directPlayProfiles
 }
 
@@ -168,12 +164,14 @@ module.exports = {
                     deviceName = result.deviceName;
                     appName = result.appName;
                     appVersion = result.appVersion;
+
                     appInfo = {
                         deviceId: deviceId,
                         deviceName: deviceName,
                         appName: appName,
                         appVersion: appVersion
                     };
+
                     resolve(appInfo);
                 }, function(err) {
                     console.log(err);
