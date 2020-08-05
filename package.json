@@ -12,7 +12,7 @@
   "license": "GPL-2.0-only",
   "dependencies": {
     "acorn": "^6.4.1",
-    "cordova": "^9.0.0",
+    "cordova": "^10.0.0",
     "cordova-android": "^8.1.0",
     "cordova-plugin-androidx": "^1.0.2",
     "cordova-plugin-chromecast": "git+https://github.com/jellyfin/cordova-plugin-chromecast.git#v0.1.1",
